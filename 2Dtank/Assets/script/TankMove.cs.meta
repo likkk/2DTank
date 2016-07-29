@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: e684abcb9abba1a449f621b3cd68c02d
+timeCreated: 1469698024
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - PrafebShell: {fileID: 101506, guid: e100f315a329c414e826e7fb2aca8fd6, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
