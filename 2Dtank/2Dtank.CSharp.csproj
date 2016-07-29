@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="Assets\script\Config.cs" />
     <Compile Include="Assets\script\GameManage.cs" />
+    <Compile Include="Assets\script\ShellCollision.cs" />
     <Compile Include="Assets\script\Tank.cs" />
     <Compile Include="Assets\script\TankMove.cs" />
   </ItemGroup>

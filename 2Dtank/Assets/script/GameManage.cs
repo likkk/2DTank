@@ -12,6 +12,7 @@ public class GameManage : MonoBehaviour {
     public GameObject TankPrefab;
     public float FirstAppearDelay;
     public float AppearDelay;
+    public GameObject Prefab_Shell;
 
 
     [HideInInspector] public static GameManage instance = null;
@@ -21,6 +22,8 @@ public class GameManage : MonoBehaviour {
     private int m_PlayerLife;
 
     private ArrayList m_EnimyTank = null;
+    private int Tank_Num = 0;
+    private int Level_Current = 0;
 
     // Use this for initialization
     void Start() {
@@ -28,6 +31,7 @@ public class GameManage : MonoBehaviour {
         m_Player = new Tank(PlayerPoint, TankMove.TYPE_PLAYER);
 
         InvokeRepeating("createTank", FirstAppearDelay, AppearDelay);
+        m_EnimyTank = new ArrayList();
     }
 
     // Update is called once per frame
@@ -36,7 +40,12 @@ public class GameManage : MonoBehaviour {
     }
 
     void createTank() {
-        //m_EnimyTank.Add(new Tank(TankPrefab, Tank.TYPE_ENIMY));
+        Debug.Log("create tank----" + Tank_Num++);
+        m_EnimyTank.Add(new Tank(TankPoint[Random.Range(0, TankPoint.Length)], TankMove.TYPE_ENIMY));
+        if (Tank_Num >= LevelEnimy[Level_Current]) {
+            Debug.Log("CancelInvoke----level=" + Level_Current + " enimy=" + Tank_Num);
+            CancelInvoke("createTank");
+        }
     }
 
     public void onPlayerDead() {
